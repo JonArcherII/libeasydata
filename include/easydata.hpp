@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#define __EASYDATA_VER__ "0.1.0"
+
 namespace easydata {
 
 class ini {

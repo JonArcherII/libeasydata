@@ -1,4 +1,4 @@
-#include "easyini.hpp"
+#include "easydata.hpp"
 
 using namespace easydata;
 

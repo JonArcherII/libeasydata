@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "easyini.hpp"
+#include "easydata.hpp"
 
 using namespace easydata;
 
