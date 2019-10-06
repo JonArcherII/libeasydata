@@ -18,7 +18,7 @@ std::string ini::read_key(std::string section_name, std::string key_name) {
 }
 
 void ini::write_key(std::string section_name, std::string key_name,
-                    std::string data) {
+                    std::string key_value) {
   int index = -1; // AKA: Unassigned
 
   // Get index for section
@@ -29,7 +29,7 @@ void ini::write_key(std::string section_name, std::string key_name,
   for (size_t i = 0; i < ini::keys.size(); i++)
     if (ini::keys[i].section_index == index &&
         key_name.compare(ini::keys[i].name) == 0) {
-      ini::keys[i].value = data;
+      ini::keys[i].value = key_value;
       return;
     }
 
@@ -42,5 +42,5 @@ void ini::write_key(std::string section_name, std::string key_name,
 
   // If we get to this point, the key does not exist and needs to be created,
   // and we already have a section index
-  ini::keys.push_back((ini_key_t){index, key_name, data});
+  ini::keys.push_back((ini_key_t){index, key_name, key_value});
 }
