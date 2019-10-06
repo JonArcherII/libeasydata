@@ -1,5 +1,7 @@
 #include "easyini.hpp"
 
+using namespace easydata;
+
 ini::ini() {
   filename = "config.ini";
 }

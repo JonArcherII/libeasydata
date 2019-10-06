@@ -1,8 +1,9 @@
 #include <fstream>
-
 #include <iostream>
 
 #include "easyini.hpp"
+
+using namespace easydata;
 
 void ini::load() {
   std::ifstream file;

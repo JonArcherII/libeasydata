@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-  ini my_ini("my_example.ini");
+  easydata::ini my_ini("my_example.ini");
   std::cout << "INI filename: " << my_ini.filename << std::endl;
 
   std::cout << "Writing keys..." << std::endl;

@@ -1,5 +1,7 @@
 #include "easyini.hpp"
 
+using namespace easydata;
+
 std::string ini::read_key(std::string section_name, std::string key_name) {
   int index = -1; // AKA: Unassigned
 

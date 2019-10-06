@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+namespace easydata {
+
 class ini {
 public:
   ini(std::string source_filename);
@@ -28,3 +30,5 @@ private:
   std::vector<std::string> sections;
   std::vector<ini_key_t> keys;
 };
+
+} // namespace easydata
