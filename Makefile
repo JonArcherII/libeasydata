@@ -5,12 +5,10 @@ TARGET := libeasydata.a
 SRC_DIRS := source
 INC_DIRS := include
 
-SRCS := $(shell find $(SRC_DIRS) -name "*.c") $(shell find $(SRC_DIRS) -name "*.cpp")
+SRCS := $(shell find $(SRC_DIRS) -name "*.cpp")
+OBJS += $(filter %.o, $(patsubst %.cpp, %.o, $(SRCS)))
 
-OBJS := $(filter %.o, $(patsubst %.c, %.o, $(shell find $(SRC_DIRS) -name "*.c")))
-OBJS += $(filter %.o, $(patsubst %.cpp, %.o, $(shell find $(SRC_DIRS) -name "*.cpp")))
-
-CPPFLAGS := -Wall -Wextra -Og
+CPPFLAGS := -Wall -Wextra -Werror -std=c++17 -Og
 CPPFLAGS += $(foreach dir, $(INC_DIRS), -I$(dir))
 
 .PHONY: all clean
