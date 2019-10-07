@@ -2,7 +2,7 @@
 
 using namespace easydata;
 
-std::string ini::read_key(std::string section_name, std::string key_name) {
+std::string ini::get_key(std::string section_name, std::string key_name) {
   int index = -1; // AKA: Unassigned
 
   // Get index for section
@@ -19,8 +19,8 @@ std::string ini::read_key(std::string section_name, std::string key_name) {
   return "";
 }
 
-void ini::write_key(std::string section_name, std::string key_name,
-                    std::string key_value) {
+void ini::set_key(std::string section_name, std::string key_name,
+                  std::string key_value) {
   int index = -1; // AKA: Unassigned
 
   // Get index for section
