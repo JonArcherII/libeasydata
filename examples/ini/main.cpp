@@ -3,7 +3,7 @@
 
 int main() {
   easydata::ini my_ini("my_example.ini");
-  
+
   std::cout << "INI filename: " << my_ini.filename << std::endl;
 
   std::cout << "Setting keys..." << std::endl;

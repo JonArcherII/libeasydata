@@ -1,7 +1,7 @@
+#include "easydata.hpp"
+
 #include <fstream>
 #include <iostream>
-
-#include "easydata.hpp"
 
 using namespace easydata;
 
@@ -11,7 +11,8 @@ void ini::load() {
 
   file.open(ini::filename);
 
-  if (!file.is_open()) return;
+  if (!file.is_open())
+    return;
 
   // Loop through every line
   while (!file.eof()) {
@@ -27,8 +28,8 @@ void ini::load() {
     // Check if valid key, then append if it is
     if (line.find('=') != std::string::npos) {
       ini::keys.push_back(
-          (ini_key_t){index, line.substr(0, line.find('=')),
-                      line.substr(line.find('=') + 1, line.size())});
+          (ini_key_t) {index, line.substr(0, line.find('=')),
+                       line.substr(line.find('=') + 1, line.size())});
       // Remove leading and trailing quotes
       if (ini::keys[ini::keys.size() - 1].value[0] == '\"' &&
           ini::keys[ini::keys.size() - 1]

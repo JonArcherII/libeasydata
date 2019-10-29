@@ -7,7 +7,8 @@ std::string ini::get_key(std::string section_name, std::string key_name) {
 
   // Get index for section
   for (size_t i = 0; i < ini::sections.size(); i++)
-    if (section_name.compare(ini::sections[i]) == 0) index = i;
+    if (section_name.compare(ini::sections[i]) == 0)
+      index = i;
 
   // Loop through keys to find ones with a matching index and name
   for (size_t i = 0; i < ini::keys.size(); i++)
@@ -25,7 +26,8 @@ void ini::set_key(std::string section_name, std::string key_name,
 
   // Get index for section
   for (size_t i = 0; i < ini::sections.size(); i++)
-    if (section_name.compare(ini::sections[i]) == 0) index = i;
+    if (section_name.compare(ini::sections[i]) == 0)
+      index = i;
 
   // Loop through keys to find ones with a matching index and name
   for (size_t i = 0; i < ini::keys.size(); i++)
@@ -44,5 +46,5 @@ void ini::set_key(std::string section_name, std::string key_name,
 
   // If we get to this point, the key does not exist and needs to be created,
   // and we already have a section index
-  ini::keys.push_back((ini_key_t){index, key_name, key_value});
+  ini::keys.push_back((ini_key_t) {index, key_name, key_value});
 }
